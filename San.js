@@ -225,7 +225,7 @@ client.on('guildMemberAdd', member => {
                         }
                       }})
                     } 
-                    let modRole2 = message.guild.roles.find("name", ":fleur_de_lis:️ Shérif Général :fleur_de_lis:️");
+                    let modRole2 = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
               if(!message.member.roles.has(modRole2.id)) {
               return message.channel.send("", {embed: {
                   title: "Erreur:",
@@ -236,11 +236,11 @@ client.on('guildMemberAdd', member => {
                   }
                 }}).catch(console.error);
               } 
-              if(!message.guild.roles.exists("name", ":fleur_de_lis:️ Shérif Général :fleur_de_lis:️")) {
+              if(!message.guild.roles.exists("name", "⚜️ Shérif Général ⚜️")) {
                 return  message.channel.send("", {embed: {
                   title: "Erreur:",
                   color: 0xff0000,
-                  description: " :no_entry_sign: Le rôle **Shérif Général** n'existe pas dans ce serveur veuillez le créer pour Kick! :no_entry_sign: ",
+                  description: " :no_entry_sign: Le rôle **⚜️ Shérif Général ⚜️** n'existe pas dans ce serveur veuillez le créer pour Kick! :no_entry_sign: ",
                   footer: {
                     text: "Message par Sanbot."
                   }
