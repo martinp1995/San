@@ -508,13 +508,13 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
           if (!amount && !user) 
           return message.reply('**:x: Veuillez spécifier une limite de message**');
           if (!user){
-          if(isNaN(message.content.split(' ')[1]) || parseInt(message.content.split(' ')[1]) < 2 || parseInt(message.content.split(' ')[1]) > 100){
-          message.channel.send('**:x: Veuillez spécifier une limite de message comprise entre 2 et 100**')
+          if(isNaN(message.content.split(' ')[1]) || parseInt(message.content.split(' ')[1]) < 2 || parseInt(message.content.split(' ')[1]) > 5000){
+          message.channel.send('**:x: Veuillez spécifier une limite de message comprise entre 2 et 5000**')
           }
           }
           if(message.content.split(' ')[2]){
-          if(isNaN(message.content.split(' ')[2]) || parseInt(message.content.split(' ')[2]) < 2 || parseInt(message.content.split(' ')[2]) > 100){
-          message.channel.send('**:x: Veuillez spécifier une limite de message comprise entre 2 et 100**')
+          if(isNaN(message.content.split(' ')[2]) || parseInt(message.content.split(' ')[2]) < 2 || parseInt(message.content.split(' ')[2]) > 5000){
+          message.channel.send('**:x: Veuillez spécifier une limite de message comprise entre 2 et 5000**')
           }
           }
            message.channel.fetchMessages({ limit: amount, }).then((messages) => {
