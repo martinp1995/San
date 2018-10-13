@@ -122,24 +122,14 @@ client.on('guildMemberAdd', member => {
         //------------------------------------------------------
         //help
       if (message.content === prefix + "help"){
-
-        let modRole = message.guild.roles.find("name", "Shérif Général");
-        if(!message.member.roles.has(modRole.id)) {
-        return message.channel.send("", {embed: {
-            title: "Erreur:",
-            color: 0xff0000,
-            description: " :no_entry_sign: Vous n'avez pas la permissions d'utiliser cette commande ! :no_entry_sign: ",
-            footer: {
-              text: "Message par Sanbot."
-            }
-          }})
-        }    
+    
         var help_embed = new Discord.RichEmbed()
             .setColor('#575957')
             .setThumbnail(client.user.avatarURL)
             .setTitle("SanBot")
             .setDescription("Je suis le bot  du serveur **-=D&R=- Village**,\nMon prefix actuel est: "+prefix)
-            .addField("Les commandes","ban`,`kick`,`purge`,`warn`,`seewarns`,`delwarns`")
+            .addField("Les commandes","`ban`,`kick`,`purge`,`warn`,`seewarns`,`delwarns`")
+            .addField("Level","`xpstat`")
             .setFooter(`demandé par @${message.author.username}`)
             .setTimestamp()
             message.channel.send(help_embed)
