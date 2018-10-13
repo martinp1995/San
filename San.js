@@ -77,8 +77,8 @@ client.on('guildMemberAdd', member => {
         .setTitle(`Xp de ${message.author.username}`)
         .setThumbnail(message.author.avatarURL)
         .setDescription("Voici tout vos Xp et votre level !")
-        .addField("Level",levels)
-        .addField("Xp",`${xp_final[1]} xp`)
+        .addField("Level :military_medal:",levels)
+        .addField("Xp :crossed_swords:",`${xp_final[1]} xp`)
         message.channel.send({embed: xp_embed})
       }
       //if(message.content.startsWith(prefix +"xpclass")){}
