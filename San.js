@@ -72,6 +72,16 @@ client.on('guildMemberAdd', member => {
             valLevel += 1
           }
         }
+                while (valniv === 0){
+          if(xp_final[1]<max ){
+            diffxp = max - xp_final[1]
+            valniv = 1
+
+          }
+          else{
+            max += 20
+          }
+        }
 
         var xp_embed = new Discord.RichEmbed()
         .setTitle(`Xp de ${message.author.username}`)
