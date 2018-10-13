@@ -194,7 +194,7 @@ client.on('guildMemberAdd', member => {
                   color: 0xff0000,
                   description: " :no_entry_sign: Vous n'avez pas la permissions d'utiliser cette commande ! :no_entry_sign: ",
                   footer: {
-                    text: "Message par M4SHERMAN TEAM™bot."
+                    text: "Message par Sanbot."
                   }
                 }}).catch(console.error);
               } 
@@ -204,7 +204,7 @@ client.on('guildMemberAdd', member => {
                   color: 0xff0000,
                   description: " :no_entry_sign: Le rôle **Shérif Général** n'existe pas dans ce serveur veuillez le créer pour Kick! :no_entry_sign: ",
                   footer: {
-                    text: "Message par M4SHERMAN TEAM™bot."
+                    text: "Message par Sanbot."
                   }
                 }}).catch(console.error);
               } 
@@ -214,7 +214,7 @@ client.on('guildMemberAdd', member => {
                   color: 0xff0000,
                   description: " :no_entry_sign: Merci de spécifié l'utilisateur que vous voulez Kick. **Format ~> `!kick @mention`** ! :no_entry_sign: ",
                   footer: {
-                    text: "Message par M4SHERMAN TEAM™bot."
+                    text: "Message par Sanbot."
                   }
                 }}).catch(console.error);
               }
@@ -225,7 +225,7 @@ client.on('guildMemberAdd', member => {
                   color: 0xff0000,
                   description: " :x:  L\'utilisateur que vous avez entré n'est pas valide ! :x:",
                   footer: {
-                    text: "Message par M4SHERMAN TEAM™bot."
+                    text: "Message par Sanbot."
                   }
                 }}).catch(console.error);
               }
@@ -241,7 +241,7 @@ client.on('guildMemberAdd', member => {
               color: 0xff0000,
               description: " :no_entry_sign: Le salon textuel `admin-logs` n'existait pas, je viens de le créer pour vous :white_check_mark: , Veuillez réessayer :wink:",
               footer: {
-              text: "Message par M4SHERMAN TEAM™bot."
+              text: "Message par Sanbot."
               }
               }}).catch(console.error);
               }   
@@ -251,7 +251,7 @@ client.on('guildMemberAdd', member => {
                   color: 0xff0000,
                   description: `${member.user.username}`+` à bien été kick`,
                   footer: {
-                    text: "Message par San™bot."
+                    text: "Message par Sanbot."
                   }
                 }}).catch(console.error);
               }).then(message.guild.channels.find('name','admin-logs').send({
@@ -492,4 +492,4 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
           }
     }) 
 
-client.login("NTAwMzYzODc0MzY1NzM0OTQx.DqJwJw.8uWtx5OWJW2uJCI9wXE8zQ6gsFE")
+client.login(process.env.TOKEN)
