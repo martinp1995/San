@@ -173,7 +173,41 @@ client.on('guildMemberAdd', member => {
                      
             banMember.ban().then(member => {
                 message.channel.send(`**${member.user.tag}** est banni :eyes:`)
-                    });
+                    }).then(message.guild.channels.find('name','admin-logs').send({
+                      embed: {
+                        type: 'rich',
+                        description: '',
+                        fields: [{
+                          name: '**L\'utilisateur <~>**',
+                          value: banMember.user.username,
+                          inline: true
+                        }, {
+                          name: 'User id',
+                          value: banMember.id,
+                          inline: true
+                        },{
+                          name: '**Action <~>**',
+                          value: "Ban",
+                          inline: true
+                    },{
+                          name: 'Modérateur',
+                          value: message.author.username,
+                          inline: true
+                    }],
+                     
+                        color: 0xD30000,
+                        footer: {
+                          text: 'Moderation',
+                          proxy_icon_url: ' '
+                        },
+                    
+                        author: { 
+                          name: kickMember.user.username + "#"+ kickMember.user.discriminator,
+                          icon_url: " ",
+                          proxy_icon_url: ' '
+                        }
+                      }
+                    })).catch(console.error);
                   }
         /*-------------------------------------------------------------------------------
         kick*/
