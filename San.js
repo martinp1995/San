@@ -22,7 +22,7 @@ client.on('guildMemberAdd', member => {
 
   const salon = member.guild.channels.find('name', 'accueil');
       let Addrole = member.guild.roles.find("name", "🏡 Simples Villageois 🏡");
-    member.addRole(validrole)
+    member.addRole(Addrole)
   const messageB = new Discord.Attachment('Loup04.jpg')
       salon.send("Un nouveau survivant @**"+ member.user.username +"**,vient d'échapper aux loups !");
       salon.send(messageB) 
