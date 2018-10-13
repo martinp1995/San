@@ -149,7 +149,7 @@ client.on('guildMemberAdd', member => {
       //-------------------------------------------------------------------------------------
         //ban
         if(message.content.startsWith(prefix +'ban')){
-          let modRole = message.guild.roles.find("name", ":fleur_de_lis:️ Shérif Général :fleur_de_lis:️");
+          let modRole = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
           if(!message.member.roles.has(modRole.id)) {
           return message.channel.send("", {embed: {
               title: "Erreur:",
@@ -214,7 +214,7 @@ client.on('guildMemberAdd', member => {
         /*-------------------------------------------------------------------------------
         kick*/
                   else if(message.content.startsWith(prefix+'kick')){
-                    let modRole = message.guild.roles.find("name", ":fleur_de_lis:️ Shérif Général :fleur_de_lis:️");
+                    let modRole = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
                     if(!message.member.roles.has(modRole.id)) {
                     return message.channel.send("", {embed: {
                         title: "Erreur:",
@@ -332,7 +332,7 @@ client.on('guildMemberAdd', member => {
         warns*/
         let warns = JSON.parse(fs.readFileSync("./warns.json", "utf8"));
 if (message.content.startsWith(prefix + "warn")){
-  let modRole = message.guild.roles.find("name", ":fleur_de_lis:️ Shérif Général :fleur_de_lis:️");
+  let modRole = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
   if(!message.member.roles.has(modRole.id)) {
   return message.channel.send("", {embed: {
       title: "Erreur:",
@@ -388,7 +388,7 @@ message.mentions.users.first().send(`:warning: **Warn |** depuis **${message.gui
 }
 
   if (message.content.startsWith(prefix+"seewarns")||message.content===prefix+"seewarns") {
-    let modRole = message.guild.roles.find("name", ":fleur_de_lis:️ Shérif Général :fleur_de_lis:️");
+    let modRole = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
     if(!message.member.roles.has(modRole.id)) {
     return message.channel.send("", {embed: {
         title: "Erreur:",
@@ -436,7 +436,7 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
 
 
   if (message.content.startsWith(prefix+"delwarns")||message.content===prefix+"delwarns") {
-    let modRole = message.guild.roles.find("name", ":fleur_de_lis:️ Shérif Général :fleur_de_lis:️");
+    let modRole = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
     if(!message.member.roles.has(modRole.id)) {
     return message.channel.send("", {embed: {
         title: "Erreur:",
