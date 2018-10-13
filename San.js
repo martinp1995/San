@@ -202,7 +202,7 @@ client.on('guildMemberAdd', member => {
                         },
                     
                         author: { 
-                          name: kickMember.user.username + "#"+ kickMember.user.discriminator,
+                          name: banMember.user.username + "#"+ banMember.user.discriminator,
                           icon_url: " ",
                           proxy_icon_url: ' '
                         }
