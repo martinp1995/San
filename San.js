@@ -149,7 +149,7 @@ client.on('guildMemberAdd', member => {
       //-------------------------------------------------------------------------------------
         //ban
         if(message.content.startsWith(prefix +'ban')){
-          let modRole = message.guild.roles.find("name", "Shérif Général");
+          let modRole = message.guild.roles.find("name", ":fleur_de_lis:️ Shérif Général :fleur_de_lis:️");
           if(!message.member.roles.has(modRole.id)) {
           return message.channel.send("", {embed: {
               title: "Erreur:",
@@ -214,7 +214,7 @@ client.on('guildMemberAdd', member => {
         /*-------------------------------------------------------------------------------
         kick*/
                   else if(message.content.startsWith(prefix+'kick')){
-                    let modRole = message.guild.roles.find("name", "Shérif Général");
+                    let modRole = message.guild.roles.find("name", ":fleur_de_lis:️ Shérif Général :fleur_de_lis:️");
                     if(!message.member.roles.has(modRole.id)) {
                     return message.channel.send("", {embed: {
                         title: "Erreur:",
@@ -225,7 +225,7 @@ client.on('guildMemberAdd', member => {
                         }
                       }})
                     } 
-                    let modRole2 = message.guild.roles.find("name", "Shérif Général");
+                    let modRole2 = message.guild.roles.find("name", ":fleur_de_lis:️ Shérif Général :fleur_de_lis:️");
               if(!message.member.roles.has(modRole2.id)) {
               return message.channel.send("", {embed: {
                   title: "Erreur:",
@@ -236,7 +236,7 @@ client.on('guildMemberAdd', member => {
                   }
                 }}).catch(console.error);
               } 
-              if(!message.guild.roles.exists("name", "Shérif Général")) {
+              if(!message.guild.roles.exists("name", ":fleur_de_lis:️ Shérif Général :fleur_de_lis:️")) {
                 return  message.channel.send("", {embed: {
                   title: "Erreur:",
                   color: 0xff0000,
@@ -332,7 +332,7 @@ client.on('guildMemberAdd', member => {
         warns*/
         let warns = JSON.parse(fs.readFileSync("./warns.json", "utf8"));
 if (message.content.startsWith(prefix + "warn")){
-  let modRole = message.guild.roles.find("name", "Shérif Général");
+  let modRole = message.guild.roles.find("name", ":fleur_de_lis:️ Shérif Général :fleur_de_lis:️");
   if(!message.member.roles.has(modRole.id)) {
   return message.channel.send("", {embed: {
       title: "Erreur:",
@@ -388,7 +388,7 @@ message.mentions.users.first().send(`:warning: **Warn |** depuis **${message.gui
 }
 
   if (message.content.startsWith(prefix+"seewarns")||message.content===prefix+"seewarns") {
-    let modRole = message.guild.roles.find("name", "Shérif Général");
+    let modRole = message.guild.roles.find("name", ":fleur_de_lis:️ Shérif Général :fleur_de_lis:️");
     if(!message.member.roles.has(modRole.id)) {
     return message.channel.send("", {embed: {
         title: "Erreur:",
@@ -436,7 +436,7 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
 
 
   if (message.content.startsWith(prefix+"delwarns")||message.content===prefix+"delwarns") {
-    let modRole = message.guild.roles.find("name", "Shérif Général");
+    let modRole = message.guild.roles.find("name", ":fleur_de_lis:️ Shérif Général :fleur_de_lis:️");
     if(!message.member.roles.has(modRole.id)) {
     return message.channel.send("", {embed: {
         title: "Erreur:",
@@ -508,13 +508,13 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
           if (!amount && !user) 
           return message.reply('**:x: Veuillez spécifier une limite de message**');
           if (!user){
-          if(isNaN(message.content.split(' ')[1]) || parseInt(message.content.split(' ')[1]) < 2 || parseInt(message.content.split(' ')[1]) > 5000){
-          message.channel.send('**:x: Veuillez spécifier une limite de message comprise entre 2 et 5000**')
+          if(isNaN(message.content.split(' ')[1]) || parseInt(message.content.split(' ')[1]) < 2 || parseInt(message.content.split(' ')[1]) > 100){
+          message.channel.send('**:x: Veuillez spécifier une limite de message comprise entre 2 et 100**')
           }
           }
           if(message.content.split(' ')[2]){
-          if(isNaN(message.content.split(' ')[2]) || parseInt(message.content.split(' ')[2]) < 2 || parseInt(message.content.split(' ')[2]) > 5000){
-          message.channel.send('**:x: Veuillez spécifier une limite de message comprise entre 2 et 5000**')
+          if(isNaN(message.content.split(' ')[2]) || parseInt(message.content.split(' ')[2]) < 2 || parseInt(message.content.split(' ')[2]) > 100){
+          message.channel.send('**:x: Veuillez spécifier une limite de message comprise entre 2 et 100**')
           }
           }
            message.channel.fetchMessages({ limit: amount, }).then((messages) => {
