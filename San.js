@@ -89,6 +89,7 @@ client.on('guildMemberAdd', member => {
         .setDescription("Voici tout vos Xp et votre level !")
         .addField("Level :military_medal:",levels)
         .addField("Xp :crossed_swords:",`${xp_final[1]} xp`)
+        .addField("Xp restant","Il vous reste "+diffxp+" pour passer au level suivant")
         message.channel.send({embed: xp_embed})
       }
       //if(message.content.startsWith(prefix +"xpclass")){}
