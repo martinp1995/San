@@ -24,7 +24,7 @@ client.on('guildMemberAdd', member => {
       let Addrole = member.guild.roles.find("name", "🏡 Simples Villageois 🏡");
     member.addRole(Addrole)
   const messageB = new Discord.Attachment('Loup04.jpg')
-      salon.send("Un nouveau survivant @**"+ member.user.username +"**,vient d'échapper aux loups !");
+      salon.send("Un nouveau survivant **"+ member.user.username +"**,vient d'échapper aux loups !\n Bienvenue au -=D&R=- Village :beer::tada: !");
       salon.send(messageB) 
   
   });
