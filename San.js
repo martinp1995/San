@@ -60,6 +60,7 @@ client.on('guildMemberAdd', member => {
         var min = 0
         var max =20
         var valLevel = 0
+        var valniv = 0
         while (valboucle === 0){
           if(min <= xp_final[1] && xp_final[1]<max ){
             levels = valLevel
