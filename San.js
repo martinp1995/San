@@ -21,8 +21,8 @@ client.on("ready", () => {
 client.on('guildMemberAdd', member => {  
 
   const salon = member.guild.channels.find('name', 'accueil');
-      let Addrole = message.guild.roles.find("name", "🏡 Simples Villageois 🏡");
-    message.member.addRole(validrole)
+      let Addrole = member.guild.roles.find("name", "🏡 Simples Villageois 🏡");
+    member.addRole(validrole)
   const messageB = new Discord.Attachment('Loup04.jpg')
       salon.send("Un nouveau survivant @**"+ member.user.username +"**,vient d'échapper aux loups !");
       salon.send(messageB) 
