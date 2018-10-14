@@ -134,6 +134,7 @@ client.on('guildMemberAdd', member => {
             .setDescription("Je suis le bot  du serveur **-=D&R=- Village**,\nMon prefix actuel est: "+prefix)
             .addField("Les commandes","`ban`,`kick`,`purge`,`warn`,`seewarns`,`delwarns`")
             .addField("Level","`xpstat`")
+            .addField("Aide","`staff`")
             .setFooter(`demandé par @${message.author.username}`)
             .setTimestamp()
             message.channel.send(help_embed)
