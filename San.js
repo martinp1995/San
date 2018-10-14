@@ -142,6 +142,8 @@ client.on('guildMemberAdd', member => {
       //-------------------------------------------------------------------------------------
         //ban
         if(message.content.startsWith(prefix +'ban')){
+           let banMember = message.guild.member(message.mentions.users.first());
+
           let modRole = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
           if(!message.member.roles.has(modRole.id)) {
           return message.channel.send("", {embed: {
@@ -153,6 +155,8 @@ client.on('guildMemberAdd', member => {
               }
             }})
           } 
+            if (banMember.roles.has("493731750229442563")) return message.reply('Tu peux pas bannir un admin')
+
             if (message.channel.type === "dm") return;
             if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply("**:x: Vous n'avez pas la permission `Gérer le serveur` dans ce serveur**").catch(console.error);
             if(message.mentions.users.size === 0) {
@@ -221,7 +225,7 @@ client.on('guildMemberAdd', member => {
                       }})
                     }
                     
-                  if (kickMember.roles.has("493731750229442563")) return message.reply('Tu peux kicker un admin')
+                  if (kickMember.roles.has("493731750229442563")) return message.reply('Tu peux pas kicker un admin')
                     
                     let modRole2 = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
               if(!message.member.roles.has(modRole2.id)) {
