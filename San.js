@@ -162,7 +162,6 @@ client.on('guildMemberAdd', member => {
             if(message.mentions.users.size === 0) {
               return message.channel.send("**:x: Vous n'avez mentionnée aucun utilisateur**");
             }
-            let banMember = message.guild.member(message.mentions.users.first());
             if(!banMember) {
               return message.channel.send("**:x: Je ne suis pas sur que cet utilisateur existe...**");
             }
