@@ -224,7 +224,19 @@ client.on('guildMemberAdd', member => {
                           text: "Message par Sanbot."
                         }
                       }})
-                    } 
+                    }
+                    
+                   if(message.mentions.members.first().highestRole.name == message.member.roles.has(modRole.id)) {
+                      return message.channel.send("", {embed: {
+                          title: "Erreur:",
+                          color: 0xff0000,
+                          description: " :no_entry_sign: Vous ne pouvez pas kicker un admin ! :no_entry_sign: ",
+                          footer: {
+                            text: "Message par Sanbot."
+                          }
+                        }})
+                      }
+                    
                     let modRole2 = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
               if(!message.member.roles.has(modRole2.id)) {
               return message.channel.send("", {embed: {
