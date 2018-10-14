@@ -21,7 +21,7 @@ client.on("ready", () => {
 client.on('guildMemberAdd', member => {  
 
   const salon = member.guild.channels.find('name', 'accueil');
-      let Addrole = member.guild.roles.find("name", "🏡 Simples Villageois 🏡");
+      let Addrole = member.guild.roles.find(x => x.name === "🏡 Simples Villageois 🏡");
     member.addRole(Addrole)
   const messageB = new Discord.Attachment('Loup04.jpg')
       salon.send("Un nouveau survivant **"+ member.user.username +"**,vient d'échapper aux loups !\n Bienvenue au -=D&R=- Village :beer::tada: !");
@@ -91,7 +91,7 @@ client.on('guildMemberAdd', member => {
       //logout
 
       if (message.content.startsWith(prefix + "logout")) {
-        let modRole3 = message.guild.roles.find("name", "configBot");
+        let modRole3 = message.guild.roles.find(x => x.name === "configBot");
         if(!message.member.roles.has(modRole3.id)) {
         return message.channel.send("", {embed: {
             title: "Erreur:",
@@ -113,13 +113,13 @@ client.on('guildMemberAdd', member => {
         if(message.author.id == "352846093748404224"){
         
 
-                console.log('Je suis off \nJe vais aller dormir');
+                console.log('Je suis off \nJe vais aller dormir');
         
-                client.destroy();
+                client.destroy();
         
    
         
-            } else {
+            } else {
         
             message.channel.send("Pour quoi vouloir m'éteindre ;-;")
           }
@@ -144,7 +144,7 @@ client.on('guildMemberAdd', member => {
         if(message.content.startsWith(prefix +'ban')){
            let banMember = message.guild.member(message.mentions.users.first());
 
-          let modRole = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
+          let modRole = message.guild.roles.find(x => x.name === "⚜️ Shérif Général ⚜️");
           if(!message.member.roles.has(modRole.id)) {
           return message.channel.send("", {embed: {
               title: "Erreur:",
@@ -212,7 +212,7 @@ client.on('guildMemberAdd', member => {
                   else if(message.content.startsWith(prefix+'kick')){
                     let kickMember = message.guild.member(message.mentions.users.first());
 
-                    let modRole = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
+                    let modRole = message.guild.roles.find(x => x.name === "⚜️ Shérif Général ⚜️");
                     if(!message.member.roles.has(modRole.id)) {
                     return message.channel.send("", {embed: {
                         title: "Erreur:",
@@ -292,7 +292,7 @@ client.on('guildMemberAdd', member => {
                     text: "Message par Sanbot."
                   }
                 }}).catch(console.error);
-              }).then(message.guild.channels.find('name','admin-logs').send({
+              }).then(message.guild.channels.find(x => x.name === "admin-logs").send({
                 embed: {
                   type: 'rich',
                   description: '',
@@ -332,7 +332,7 @@ client.on('guildMemberAdd', member => {
         warns*/
         let warns = JSON.parse(fs.readFileSync("./warns.json", "utf8"));
 if (message.content.startsWith(prefix + "warn")){
-  let modRole = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
+  let modRole = message.guild.roles.find(x => x.name === "⚜️ Shérif Général ⚜️");
   if(!message.member.roles.has(modRole.id)) {
   return message.channel.send("", {embed: {
       title: "Erreur:",
@@ -388,7 +388,7 @@ message.mentions.users.first().send(`:warning: **Warn |** depuis **${message.gui
 }
 
   if (message.content.startsWith(prefix+"seewarns")||message.content===prefix+"seewarns") {
-    let modRole = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
+    let modRole = message.guild.roles.find(x => x.name === "⚜️ Shérif Général ⚜️");
     if(!message.member.roles.has(modRole.id)) {
     return message.channel.send("", {embed: {
         title: "Erreur:",
@@ -528,6 +528,5 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
               
           });
           }
-    }) 
-
+    })  
 client.login(process.env.TOKEN)
