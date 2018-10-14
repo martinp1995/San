@@ -139,6 +139,28 @@ client.on('guildMemberAdd', member => {
             message.channel.send(help_embed)
       }
       //-------------------------------------------------------------------------------------
+            //staff
+      if (message.content === prefix + "staff"){
+        let RoleChef = message.guild.members.filter(member => { 
+          return member.roles.find(x => x.name === "🐾 l'Infect père des Loups 🐾");
+      }).map(member => {
+          return member.user.username;
+      })
+      let RoleSecond = message.guild.members.filter(member => { 
+        return member.roles.find(x => x.name === "⚜️ Shérif Général ⚜️");
+    }).map(member => {
+        return member.user.username;
+    })
+        var help_embed = new Discord.RichEmbed()
+        .setColor('#4286f4')
+        .setTitle("Voici les personnes a contacter si vous avez des problèmes ou besoin de conseil")
+        .addField("ADMINISTRATEUR/FONDATEUR",RoleChef)
+        .addField("SECOND",RoleSecond)
+        .setFooter(`demandé par @${message.author.username}`)
+        .setTimestamp()
+        message.channel.send(help_embed)
+      }
+      //-------------------------------------------------------------------------------------
         //ban
         if(message.content.startsWith(prefix +'ban')){
            let banMember = message.guild.member(message.mentions.users.first());
