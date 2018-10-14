@@ -28,20 +28,15 @@ client.on('guildMemberAdd', member => {
       salon.send(messageB) 
   });
 
-  client.on('messageReactionAdd',(reaction) =>{
-
-    let homme = reaction.guild.roles.find(x => x.name === "☄️ Homme ☄️");
-    let femme = reaction.guild.roles.find(x => x.name === "✨Femme✨");
-
-    message.react("🛡").then(member => member.addRole(homme));
-    message.react("🌸").then(member => member.addRole(femme));
-    client.channels.get("501138031198208000").send('Un utilisateur a réagis avec cet émoji: '+ reaction.emoji.name);
-
-  });
-
-
     client.on('message', message => {
 
+            let homme = message.guild.roles.find(x => x.name === "☄️ Homme ☄️");
+      let femme = message.guild.roles.find(x => x.name === "✨Femme✨");
+  
+      message.react("🛡").then(member => member.addRole(homme));
+      message.react("🌸").then(member => member.addRole(femme));
+
+      
       //xp
       var msgauthor = message.author.toString()
 
