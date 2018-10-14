@@ -29,7 +29,7 @@ client.on('guildMemberAdd', member => {
   });
 
     client.on('message', message => {
-      
+      /*
       if(message.content ="🛡"){
         let homme = message.guild.roles.find(x => x.name === "☄️ Homme ☄️");
         message.addRole(homme)
@@ -37,7 +37,7 @@ client.on('guildMemberAdd', member => {
       if(message.content ="🌸"){
         let femme = message.guild.roles.find(x => x.name === "✨Femme✨");
         message.addRole(femme)
-      }
+      }*/
 
       //xp
       var msgauthor = message.author.toString()
