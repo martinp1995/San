@@ -28,14 +28,7 @@ client.on('guildMemberAdd', member => {
       salon.send(messageB) 
   
   });
-  client.on('guildMemberRemove', member => {  
 
-    const salon = member.guild.channels.find('name', 'accueil');
-    const messageB = new Discord.Attachment('loup08.jpg')
-        salon.send("Les Loups ont dévorer  :wolf: **"+ member.user.username +"**:wolf:"); 
-        salon.send(messageB)
-    
-    });
     client.on('message', message => {
 
       //xp
@@ -214,6 +207,8 @@ client.on('guildMemberAdd', member => {
         /*-------------------------------------------------------------------------------
         kick*/
                   else if(message.content.startsWith(prefix+'kick')){
+                    let kickMember = message.guild.member(message.mentions.users.first());
+
                     let modRole = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
                     if(!message.member.roles.has(modRole.id)) {
                     return message.channel.send("", {embed: {
@@ -226,16 +221,7 @@ client.on('guildMemberAdd', member => {
                       }})
                     }
                     
-                   if(message.mentions.members.first().highestRole.name == message.member.roles.has(modRole.id)) {
-                      return message.channel.send("", {embed: {
-                          title: "Erreur:",
-                          color: 0xff0000,
-                          description: " :no_entry_sign: Vous ne pouvez pas kicker un admin ! :no_entry_sign: ",
-                          footer: {
-                            text: "Message par Sanbot."
-                          }
-                        }})
-                      }
+                  if (message.kickMember.roles.has("493731750229442563")) return message.reply('Tu peux kicker un admin')
                     
                     let modRole2 = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
               if(!message.member.roles.has(modRole2.id)) {
@@ -268,7 +254,6 @@ client.on('guildMemberAdd', member => {
                   }
                 }}).catch(console.error);
               }
-              let kickMember = message.guild.member(message.mentions.users.first());
               if(!kickMember) {
               return message.channel.send("", {embed: {
                   title: "Erreur:",
