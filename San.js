@@ -30,8 +30,8 @@ client.on('guildMemberAdd', member => {
 
   client.on('messageReactionAdd',(reaction) =>{
 
-    let homme = member.guild.roles.find(x => x.name === "☀️Homme");
-    let femme = member.guild.roles.find(x => x.name === "🌺Femme");
+    let homme = member.guild.roles.find(x => x.name === "☄️ Homme ☄️");
+    let femme = member.guild.roles.find(x => x.name === "✨Femme✨");
 
     message.react("🛡").then(member => member.addRole(homme));
     message.react("🌸").then(member => member.addRole(femme));
