@@ -85,7 +85,48 @@ client.on('guildMemberAdd', member => {
         .addField("Xp restant","Il vous reste **"+diffxp+" xp** pour passer au level suivant")
         message.channel.send({embed: xp_embed})
       }
-      //if(message.content.startsWith(prefix +"xpclass")){}
+           if(message.content.startsWith(prefix +"xp")){
+        let XpMembres = message.guild.member(message.mentions.users.first());
+
+        var xp = db.get("xp").filter({user: XpMembres}).find("xp").value()
+        var xp_final = Object.values(xp)
+        var valboucle = 0
+        var min = 0
+        var max =20
+        var valLevel = 0
+        var valniv = 0
+        while (valboucle === 0){
+          if(min <= xp_final[1] && xp_final[1]<max ){
+            levels = valLevel
+            valboucle = 1
+
+          }
+          else{
+            min += 20
+            max += 20
+            valLevel += 1
+          }
+        }
+                while (valniv === 0){
+          if(xp_final[1]<max ){
+            diffxp = max - xp_final[1]
+            valniv = 1
+
+          }
+          else{
+            max += 20
+          }
+        }
+
+        var xp_embed = new Discord.RichEmbed()
+        .setTitle(`Xp de ${message.author.username}`)
+        .setThumbnail(message.author.avatarURL)
+        .setDescription("Voici tout vos Xp et votre level !")
+        .addField("Level :military_medal:",levels)
+        .addField("Xp :crossed_swords:",`${xp_final[1]} xp`)
+        .addField("Xp restant","Il vous reste **"+diffxp+" xp** pour passer au level suivant")
+        message.channel.send({embed: xp_embed})
+      }
       //------------------------------------------------------------------------
       //logout
 
@@ -133,7 +174,7 @@ client.on('guildMemberAdd', member => {
             .setTitle("SanBot")
             .setDescription("Je suis le bot  du serveur **-=D&R=- Village**,\nMon prefix actuel est: "+prefix)
             .addField("Les commandes","`ban`,`kick`,`purge`,`warn`,`seewarns`,`delwarns`")
-            .addField("Level","`xpstat`")
+            .addField("Level","`xpstat`,`xp`")
             .addField("Aide","`staff`")
             .setFooter(`demandé par @${message.author.username}`)
             .setTimestamp()
