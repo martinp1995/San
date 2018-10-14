@@ -29,14 +29,16 @@ client.on('guildMemberAdd', member => {
   });
 
     client.on('message', message => {
-
-            let homme = message.guild.roles.find(x => x.name === "☄️ Homme ☄️");
-      let femme = message.guild.roles.find(x => x.name === "✨Femme✨");
-  
-      message.react("🛡").then(member => member.addRole(homme));
-      message.react("🌸").then(member => member.addRole(femme));
-
       
+      if(message.content ="🛡"){
+        let homme = message.guild.roles.find(x => x.name === "☄️ Homme ☄️");
+        member.addRole(homme)
+      }
+      if(message.content ="🌸"){
+        let femme = message.guild.roles.find(x => x.name === "✨Femme✨");
+        member.addRole(femme)
+      }
+
       //xp
       var msgauthor = message.author.toString()
 
