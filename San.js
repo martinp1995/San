@@ -32,11 +32,11 @@ client.on('guildMemberAdd', member => {
       
       if(message.content ="🛡"){
         let homme = message.guild.roles.find(x => x.name === "☄️ Homme ☄️");
-        message.member.addRole(homme)
+        message.addRole(homme)
       }
       if(message.content ="🌸"){
         let femme = message.guild.roles.find(x => x.name === "✨Femme✨");
-        message.member.addRole(femme)
+        message.addRole(femme)
       }
 
       //xp
