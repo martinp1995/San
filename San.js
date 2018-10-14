@@ -20,13 +20,12 @@ client.on("ready", () => {
 
 client.on('guildMemberAdd', member => {  
 
-  const salon = member.guild.channels.find('name', 'accueil');
-      let Addrole = member.guild.roles.find(x => x.name === "🏡 Simples Villageois 🏡");
-    member.addRole(Addrole)
+  const salon = member.guild.channels.find(x => x.name === 'accueil');
+      let Villageois = member.guild.roles.find(x => x.name === "🏡 Simples Villageois 🏡");
+      member.addRole(Villageois)
   const messageB = new Discord.Attachment('Loup04.jpg')
       salon.send("Un nouveau survivant **"+ member.user.username +"**,vient d'échapper aux loups !\n Bienvenue au -=D&R=- Village :beer::tada: !");
       salon.send(messageB) 
-  
   });
 
     client.on('message', message => {
