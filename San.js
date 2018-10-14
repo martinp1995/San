@@ -20,7 +20,7 @@ client.on("ready", () => {
 
 client.on('guildMemberAdd', member => {  
 
-  const salon = member.guild.channels.find(x => x.name === 'accueil');
+  const salon = member.guild.channels.find(x => x.name === '🌀accueil');
       let Villageois = member.guild.roles.find(x => x.name === "🏡 Simples Villageois 🏡");
       member.addRole(Villageois)
   const messageB = new Discord.Attachment('Loup04.jpg')
