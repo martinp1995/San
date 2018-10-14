@@ -221,7 +221,7 @@ client.on('guildMemberAdd', member => {
                       }})
                     }
                     
-                  if (message.kickMember.roles.has("493731750229442563")) return message.reply('Tu peux kicker un admin')
+                  if (kickMember.roles.has("493731750229442563")) return message.reply('Tu peux kicker un admin')
                     
                     let modRole2 = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
               if(!message.member.roles.has(modRole2.id)) {
