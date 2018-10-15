@@ -20,7 +20,7 @@ client.on("ready", () => {
 
 client.on('guildMemberAdd', member => {  
 
-  const salon = member.guild.channels.find(x => x.name === '🌀accueil');
+  const salon = member.guild.channels.find('name', 'accueil');
       let Villageois = member.guild.roles.find(x => x.name === "🏡 Simples Villageois 🏡");
       member.addRole(Villageois)
   const messageB = new Discord.Attachment('Loup04.jpg')
@@ -29,15 +29,6 @@ client.on('guildMemberAdd', member => {
   });
 
     client.on('message', message => {
-      /*
-      if(message.content ="🛡"){
-        let homme = message.guild.roles.find(x => x.name === "☄️ Homme ☄️");
-        message.addRole(homme)
-      }
-      if(message.content ="🌸"){
-        let femme = message.guild.roles.find(x => x.name === "✨Femme✨");
-        message.addRole(femme)
-      }*/
 
       //xp
       var msgauthor = message.author.toString()
@@ -89,9 +80,8 @@ client.on('guildMemberAdd', member => {
         .setTitle(`Xp de ${message.author.username}`)
         .setThumbnail(message.author.avatarURL)
         .setDescription("Voici tout vos Xp et votre level !")
-        .addField("Level :military_medal:",levels)
-        .addField("Xp :crossed_swords:",`${xp_final[1]} xp`)
-        .addField("Xp restant","Il vous reste **"+diffxp+" xp** pour passer au level suivant")
+        .addField(":military_medal: Level et :crossed_swords: XP",levels+"/"+`${xp_final[1]} xp`)
+        .setFooter("Xp restant","Il vous reste **"+diffxp+" xp** pour passer au level suivant")
         message.channel.send({embed: xp_embed})
       }
       //------------------------------------------------------------------------
@@ -142,32 +132,9 @@ client.on('guildMemberAdd', member => {
             .setDescription("Je suis le bot  du serveur **-=D&R=- Village**,\nMon prefix actuel est: "+prefix)
             .addField("Les commandes","`ban`,`kick`,`purge`,`warn`,`seewarns`,`delwarns`")
             .addField("Level","`xpstat`")
-            .addField("Aide","`staff`")
             .setFooter(`demandé par @${message.author.username}`)
             .setTimestamp()
             message.channel.send(help_embed)
-      }
-      //-------------------------------------------------------------------------------------
-            //staff
-      if (message.content === prefix + "staff"){
-        let RoleChef = message.guild.members.filter(member => { 
-          return member.roles.find(x => x.name === "🐾 l'Infect père des Loups 🐾");
-      }).map(member => {
-          return member.user.username;
-      })
-      let RoleSecond = message.guild.members.filter(member => { 
-        return member.roles.find(x => x.name === "⚜️ Shérif Général ⚜️");
-    }).map(member => {
-        return member.user.username;
-    })
-        var help_embed = new Discord.RichEmbed()
-        .setColor('#4286f4')
-        .setTitle("Voici les personnes a contacter si vous avez des problèmes ou besoin de conseil")
-        .addField("ADMINISTRATEUR/FONDATEUR",RoleChef)
-        .addField("SECOND",RoleSecond)
-        .setFooter(`demandé par @${message.author.username}`)
-        .setTimestamp()
-        message.channel.send(help_embed)
       }
       //-------------------------------------------------------------------------------------
         //ban
@@ -558,5 +525,5 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
               
           });
           }
-    })  
+    })   
 client.login(process.env.TOKEN)
