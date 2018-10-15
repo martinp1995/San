@@ -80,7 +80,7 @@ client.on('guildMemberAdd', member => {
         .setTitle(`Xp de ${message.author.username}`)
         .setThumbnail(message.author.avatarURL)
         .setDescription("Voici tout vos Xp et votre level !")
-        .addField(":military_medal: Level et :crossed_swords: XP",levels+"/"+`${xp_final[1]} xp`)
+        .addField(":military_medal: Level et XP :crossed_swords: ",levels+"/"+`${xp_final[1]} xp`)
         .addField("Xp restant","Il vous reste **"+diffxp+" xp** pour passer au level suivant")
         message.channel.send({embed: xp_embed})
       }
