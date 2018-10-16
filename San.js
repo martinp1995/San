@@ -20,8 +20,8 @@ client.on("ready", () => {
 
 client.on('guildMemberAdd', member => { 
       const messageB = new Discord.Attachment('Loup04.jpg')/*
-    */member.guild.channels.find('name', 'accueil').send("Un nouveau survivant **"+ member.user.username +"**,vient d'échapper aux loups !\n Bienvenue au -=D&R=- Village :beer::tada: !")
-    member.guild.channels.find('name', 'accueil').send(messageB)
+    member.guild.channels.find('name', 'accueil').send("Un nouveau survivant **"+ member.user.username +"**,vient d'échapper aux loups !\n Bienvenue au -=D&R=- Village :beer::tada: !")
+    */member.guild.channels.find('name', 'accueil').send(messageB)
   let Villageois = member.guild.roles.find(x => x.name === "🏡 Simples Villageois 🏡");
       member.addRole(Villageois)
   });
