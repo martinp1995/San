@@ -18,14 +18,12 @@ client.on("ready", () => {
   client.channels.get("500396940715098112").send("Je suis prêt à travailler,donner moi des commandes a faire \net mon préfix est "+prefix);
 });
 
-client.on('guildMemberAdd', member => {  
-
-  const salon = member.guild.channels.find('name', 'accueil');
-      let Villageois = member.guild.roles.find(x => x.name === "🏡 Simples Villageois 🏡");
+client.on('guildMemberAdd', member => { 
+      const messageB = new Discord.Attachment('Loup04.jpg')
+    member.guild.channels.find('name', 'accueil').send("Un nouveau survivant **"+ member.user.username +"**,vient d'échapper aux loups !\n Bienvenue au -=D&R=- Village :beer::tada: !")
+    member.guild.channels.find('name', 'accueil').send(messageB) 
+  let Villageois = member.guild.roles.find(x => x.name === "🏡 Simples Villageois 🏡");
       member.addRole(Villageois)
-  const messageB = new Discord.Attachment('Loup04.jpg')
-      salon.send("Un nouveau survivant **"+ member.user.username +"**,vient d'échapper aux loups !\n Bienvenue au -=D&R=- Village :beer::tada: !");
-      salon.send(messageB) 
   });
 
     client.on('message', message => {
