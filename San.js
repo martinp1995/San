@@ -139,7 +139,7 @@ client.on('guildMemberAdd', member => {
         if(message.content.startsWith(prefix +'ban')){
            let banMember = message.guild.member(message.mentions.users.first());
 
-          let modRole = message.guild.roles.find(x => x.name === "⚜️ Shérif Général ⚜️");
+          let modRole = message.guild.roles.find(x => x.name === "⚜️ Grands Méchant Loups ⚜️");
           if(!message.member.roles.has(modRole.id)) {
           return message.channel.send("", {embed: {
               title: "Erreur:",
@@ -207,7 +207,7 @@ client.on('guildMemberAdd', member => {
                   else if(message.content.startsWith(prefix+'kick')){
                     let kickMember = message.guild.member(message.mentions.users.first());
 
-                    let modRole = message.guild.roles.find(x => x.name === "⚜️ Shérif Général ⚜️");
+                    let modRole = message.guild.roles.find(x => x.name === "⚜️ Grands Méchant Loups ⚜️");
                     if(!message.member.roles.has(modRole.id)) {
                     return message.channel.send("", {embed: {
                         title: "Erreur:",
@@ -221,7 +221,7 @@ client.on('guildMemberAdd', member => {
                     
                   if (kickMember.roles.has("493731750229442563")) return message.reply('Tu peux pas kicker un admin')
                     
-                    let modRole2 = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
+                    let modRole2 = message.guild.roles.find("name", "⚜️ Grands Méchant Loups ⚜️");
               if(!message.member.roles.has(modRole2.id)) {
               return message.channel.send("", {embed: {
                   title: "Erreur:",
@@ -232,11 +232,11 @@ client.on('guildMemberAdd', member => {
                   }
                 }}).catch(console.error);
               } 
-              if(!message.guild.roles.exists("name", "⚜️ Shérif Général ⚜️")) {
+              if(!message.guild.roles.exists("name", "⚜️ Grands Méchant Loups ⚜️")) {
                 return  message.channel.send("", {embed: {
                   title: "Erreur:",
                   color: 0xff0000,
-                  description: " :no_entry_sign: Le rôle **⚜️ Shérif Général ⚜️** n'existe pas dans ce serveur veuillez le créer pour Kick! :no_entry_sign: ",
+                  description: " :no_entry_sign: Le rôle **⚜️ Grands Méchant Loups ⚜️** n'existe pas dans ce serveur veuillez le créer pour Kick! :no_entry_sign: ",
                   footer: {
                     text: "Message par Sanbot."
                   }
@@ -327,7 +327,7 @@ client.on('guildMemberAdd', member => {
         warns*/
         let warns = JSON.parse(fs.readFileSync("./warns.json", "utf8"));
 if (message.content.startsWith(prefix + "warn")){
-  let modRole = message.guild.roles.find(x => x.name === "⚜️ Shérif Général ⚜️");
+  let modRole = message.guild.roles.find(x => x.name === "⚜️ Grands Méchant Loups ⚜️");
   if(!message.member.roles.has(modRole.id)) {
   return message.channel.send("", {embed: {
       title: "Erreur:",
@@ -383,7 +383,7 @@ message.mentions.users.first().send(`:warning: **Warn |** depuis **${message.gui
 }
 
   if (message.content.startsWith(prefix+"seewarns")||message.content===prefix+"seewarns") {
-    let modRole = message.guild.roles.find(x => x.name === "⚜️ Shérif Général ⚜️");
+    let modRole = message.guild.roles.find(x => x.name === "⚜️ Grands Méchant Loups ⚜️");
     if(!message.member.roles.has(modRole.id)) {
     return message.channel.send("", {embed: {
         title: "Erreur:",
@@ -431,7 +431,7 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return m
 
 
   if (message.content.startsWith(prefix+"delwarns")||message.content===prefix+"delwarns") {
-    let modRole = message.guild.roles.find("name", "⚜️ Shérif Général ⚜️");
+    let modRole = message.guild.roles.find("name", "⚜️ Grands Méchant Loups ⚜️");
     if(!message.member.roles.has(modRole.id)) {
     return message.channel.send("", {embed: {
         title: "Erreur:",
