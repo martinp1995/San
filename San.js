@@ -150,15 +150,16 @@ client.on('guildMemberAdd', member => {
               }
             }})
           } 
-            if (banMember.roles.has("494609050441613315")) return message.reply('Tu peux pas bannir un admin')
-            if (banMember.roles.has("493731750229442563")) return message.reply('Tu peux pas bannir un admin')
-            if (banMember.roles.has("498604255574491146")) return message.reply('Tu peux pas bannir un admin')
+
 
             if (message.channel.type === "dm") return;
             if(!message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return message.reply("**:x: Vous n'avez pas la permission `Gérer le serveur` dans ce serveur**").catch(console.error);
             if(message.mentions.users.size === 0) {
               return message.channel.send("**:x: Vous n'avez mentionnée aucun utilisateur**");
             }
+            if (banMember.roles.has("494609050441613315")) return message.reply('Tu peux pas bannir un admin')
+            if (banMember.roles.has("493731750229442563")) return message.reply('Tu peux pas bannir un admin')
+            if (banMember.roles.has("498604255574491146")) return message.reply('Tu peux pas bannir un admin')
             if(!banMember) {
               return message.channel.send("**:x: Je ne suis pas sur que cet utilisateur existe...**");
             }
@@ -221,9 +222,7 @@ client.on('guildMemberAdd', member => {
                       }})
                     }
                     
-            if (kickMember.roles.has("494609050441613315")) return message.reply('Tu peux pas bannir un admin')
-            if (kickMember.roles.has("493731750229442563")) return message.reply('Tu peux pas bannir un admin')
-            if (kickMember.roles.has("498604255574491146")) return message.reply('Tu peux pas bannir un admin')                    
+                   
                     let modRole2 = message.guild.roles.find("name", "⚜️ Grands Méchant Loups ⚜️");
               if(!message.member.roles.has(modRole2.id)) {
               return message.channel.send("", {embed: {
@@ -255,6 +254,9 @@ client.on('guildMemberAdd', member => {
                   }
                 }}).catch(console.error);
               }
+            if (kickMember.roles.has("494609050441613315")) return message.reply('Tu peux pas bannir un admin')
+            if (kickMember.roles.has("493731750229442563")) return message.reply('Tu peux pas bannir un admin')
+            if (kickMember.roles.has("498604255574491146")) return message.reply('Tu peux pas bannir un admin') 
               if(!kickMember) {
               return message.channel.send("", {embed: {
                   title: "Erreur:",
